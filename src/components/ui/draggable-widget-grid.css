@@ -1,0 +1,72 @@
+.dwg-container {
+  position: relative;
+  width: 100%;
+}
+
+.dwg-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.dwg-grid {
+  display: grid;
+  width: 100%;
+}
+
+.dwg-widget {
+  position: relative;
+  min-width: 0;
+  border-radius: var(--widget-radius);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.dwg-widget:focus-visible {
+  outline-color: var(--accent);
+}
+.dwg-widget a, .dwg-widget img {
+  -webkit-user-drag: none;
+}
+
+.dwg-editable {
+  cursor: grab;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.dwg-editable:active {
+  cursor: grabbing;
+}
+
+.dwg-widget-inner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--widget-radius);
+  background-color: rgba(10, 10, 10, 0.4);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--border);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  clip-path: inset(0 round var(--widget-radius));
+  backdrop-filter: blur(8px);
+}
+
+.dwg-widget:not(:active):hover .dwg-widget-inner {
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px var(--accent), 0 10px 30px -10px rgba(94, 156, 249, 0.25);
+  transform: translateY(-5px);
+}
+
+.dwg-landed {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
+}

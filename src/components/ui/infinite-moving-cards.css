@@ -1,0 +1,48 @@
+.imc-scroller {
+  position: relative;
+  z-index: 20;
+  max-width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+}
+
+.imc-scroller-inner {
+  display: flex;
+  min-width: 100%;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding: 1rem 0;
+  width: max-content;
+  flex-wrap: nowrap;
+  margin: 0;
+  list-style: none;
+}
+
+.imc-scroller.started .imc-scroller-inner {
+  animation: imc-scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+.imc-scroller.pause-on-hover:hover .imc-scroller-inner {
+  animation-play-state: paused;
+}
+
+@keyframes imc-scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.imc-item {
+  position: relative;
+  border-radius: 8px;
+  flex-shrink: 0;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  font-family: monospace;
+  white-space: nowrap;
+}

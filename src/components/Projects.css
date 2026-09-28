@@ -1,0 +1,38 @@
+.projects-section { background: #000; color: var(--text); padding: 100px 0; position: relative; overflow-x: clip; }
+.gallery-title { padding: 0 5%; margin: 0 auto 4rem; max-width: 1400px; }
+.projects-list { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+
+.project-section { display: flex; flex-direction: column; align-items: stretch; }
+
+/* Left: info */
+.project-info { padding: 4rem 0 1rem; display: flex; flex-direction: column; justify-content: center; }
+.project-num { font-size: 1rem; color: var(--accent); letter-spacing: 0.15em; opacity: 0.8; margin-bottom: 1rem; display: block; }
+.project-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 400; line-height: 1.1; text-transform: uppercase; color: #fff; letter-spacing: -0.01em; }
+.project-desc { color: var(--muted); font-size: 1.1rem; line-height: 1.6; margin: 1.5rem 0; max-width: 95%; }
+.project-tech-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.tech-tag { font-size: 0.85rem; color: #fff; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 6px; letter-spacing: 0.05em; }
+
+/* Right: gallery (sticky pin inside a tall per-project track) */
+.project-gallery-col { min-width: 0; }
+.pg-pin { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.pg-stack {
+  position: relative; overflow: hidden; isolation: isolate;
+  width: min(100%, 520px, 57vh); aspect-ratio: 3 / 4;
+  border-radius: 28px; border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8); background: #111;
+}
+.pg-card { position: absolute; inset: 0; margin: 0; overflow: hidden; background: #111; will-change: transform, opacity; }
+.pg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+.pg-card:hover .pg-img { transform: scale(1.03); }
+.pg-gradient { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 45%); }
+.pg-label { position: absolute; left: 1.5rem; bottom: 1.6rem; right: 5.5rem; color: #fff; font-size: 0.95rem; line-height: 1.3; }
+.pg-arrow { position: absolute; right: 1.25rem; bottom: 1.25rem; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(47,128,255,0.15); border: 1px solid #2F80FF; transition: box-shadow 0.4s ease, background 0.4s ease; }
+.pg-arrow:hover, .pg-arrow:focus-visible { background: #2F80FF; box-shadow: 0 0 18px rgba(47,128,255,0.65); }
+
+/* Desktop: 40% info / 60% gallery */
+@media (min-width: 1024px) {
+  .project-section { flex-direction: row; align-items: flex-start; gap: 5%; }
+  .project-info { flex: 0 0 40%; position: sticky; top: 0; height: 100vh; padding: 0; }
+  .project-gallery-col { flex: 1; }
+}
