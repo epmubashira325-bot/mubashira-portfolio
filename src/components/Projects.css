@@ -18,21 +18,21 @@
 
 .pg-stack {
   position: relative; overflow: hidden; isolation: isolate;
-  width: min(100%, 520px, 57vh); aspect-ratio: 3 / 4;
+  width: 100%; max-width: 900px; aspect-ratio: 4 / 3;
   border-radius: 28px; border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 20px 50px rgba(0,0,0,0.8); background: #111;
 }
 .pg-card { position: absolute; inset: 0; margin: 0; overflow: hidden; background: #111; will-change: transform, opacity; }
-.pg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+.pg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
 .pg-card:hover .pg-img { transform: scale(1.03); }
 .pg-gradient { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 45%); }
 .pg-label { position: absolute; left: 1.5rem; bottom: 1.6rem; right: 5.5rem; color: #fff; font-size: 0.95rem; line-height: 1.3; }
 .pg-arrow { position: absolute; right: 1.25rem; bottom: 1.25rem; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(47,128,255,0.15); border: 1px solid #2F80FF; transition: box-shadow 0.4s ease, background 0.4s ease; }
 .pg-arrow:hover, .pg-arrow:focus-visible { background: #2F80FF; box-shadow: 0 0 18px rgba(47,128,255,0.65); }
 
-/* Desktop: 40% info / 60% gallery */
+/* Desktop: 45% info / 55% gallery */
 @media (min-width: 1024px) {
-  .project-section { flex-direction: row; align-items: flex-start; gap: 5%; }
-  .project-info { flex: 0 0 40%; position: sticky; top: 0; height: 100vh; padding: 0; }
+  .project-section { flex-direction: row; align-items: flex-start; gap: 4%; }
+  .project-info { flex: 0 0 45%; position: sticky; top: 0; height: 100vh; padding: 0; }
   .project-gallery-col { flex: 1; }
 }
