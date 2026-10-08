@@ -5,17 +5,16 @@ import About from './components/About';
 import SkillUniverse from './components/SkillUniverse';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-import SmokeEffect from './components/SmokeEffect';
+import { SmoothCursor } from './components/ui/smooth-cursor';
 
 function App() {
   return (
     <div className="app-container">
-      <SmokeEffect />
+      <SmoothCursor />
       <Navbar />
       <main>
         <Hero />
@@ -23,7 +22,6 @@ function App() {
         <Experience />
         <Projects />
         <SkillUniverse />
-        <Education />
         <Certifications />
         <Contact />
       </main>

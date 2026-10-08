@@ -7,6 +7,10 @@
   --grid-color: rgba(255, 255, 255, 0.03);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -56,7 +60,6 @@ button {
 
 /* Sections */
 section {
-  min-height: 100vh;
   padding: 100px 5%;
   position: relative;
   display: flex;

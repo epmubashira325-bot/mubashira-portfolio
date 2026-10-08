@@ -11,7 +11,7 @@ const WIDGETS = [
   { id: 'NLP / GENERATIVE AI', size: 'wide', label: 'NLP' },
   { id: 'WEB DEVELOPMENT', size: 'wide', label: 'Web' },
   { id: 'EMBEDDED AI', size: 'wide', label: 'Embedded' },
-  { id: 'TOOLS', size: 'wide', label: 'Tools' },
+  { id: 'DATABASE & TOOLS', size: 'wide', label: 'DB & Tools' },
 ];
 
 const renderWidget = (item) => {
@@ -19,7 +19,7 @@ const renderWidget = (item) => {
   
   return (
     <div style={{ padding: '1.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <h3 className="category-title mono" style={{ marginBottom: '1rem', fontSize: '1rem' }}>{item.id}</h3>
+      <h3 className="category-title mono" style={{ marginBottom: '1rem', fontSize: '1rem', color: 'var(--accent)' }}>{item.id}</h3>
       <div className="skills-list" style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignContent: 'flex-start' }}>
         {categorySkills.map(skill => (
           <span key={skill} className="skill-tag" style={{ margin: 0 }}>{skill}</span>
@@ -31,10 +31,10 @@ const renderWidget = (item) => {
 
 const SkillUniverse = () => {
   return (
-    <section id="skills" className="skills-section">
-      <h2 className="section-title mono text-center">02 // SKILL CONSTELLATION</h2>
+    <section id="skills" className="skills-section" style={{ paddingBottom: '2rem' }}>
+      <h2 className="section-title mono text-center" style={{ marginBottom: '1rem' }}>02 // SKILL CONSTELLATION</h2>
       
-      <p style={{ textAlign: 'center', color: 'var(--muted)', marginBottom: '2rem', fontSize: '0.85rem' }}>
+      <p style={{ textAlign: 'center', color: 'var(--muted)', marginBottom: '1.5rem', fontSize: '0.85rem' }}>
         Drag and rearrange widgets to customize the layout.
       </p>
 

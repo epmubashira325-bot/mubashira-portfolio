@@ -2,7 +2,6 @@
   padding: 100px 0 100px 0; /* Removing side padding for full width text */
   background: #000;
   color: var(--text);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +16,7 @@
   background: #000;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .pingpong-text {
@@ -27,8 +27,6 @@
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
-  animation: pingpong 5s ease-in-out infinite alternate;
-  will-change: transform;
   
   /* Matched with Hero text color */
   background: linear-gradient(to bottom, #ffffff 0%, #666666 100%);
