@@ -37,7 +37,7 @@ export const projects = [
       "A live webcam pipeline that detects faces and classifies multiple emotions in real time, using pretrained CNN models for fast inference.",
     technologies: ["Python", "TensorFlow", "OpenCV", "CNN"],
     link: "#",
-    images: ["/images/emotion1.png", "/images/emotion2.png","/images/emotion3.png"],
+    images: [ "/images/emotion2.png","/images/emotion3.png"],
 
   },
   {

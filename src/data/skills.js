@@ -6,5 +6,5 @@ export const skills = {
   "NLP / GENERATIVE AI": ["NLP", "Ollama", "Llama 3.2", "Prompt Engineering"],
   "WEB DEVELOPMENT": ["React", "HTML", "CSS", "Streamlit"],
   "EMBEDDED AI": ["Raspberry Pi 4", "Sensor Fusion"],
-  "TOOLS": ["Git", "VS Code", "Ngrok"]
+  "DATABASE & TOOLS": ["Git", "Ngrok", "PostgreSQL", "GitLab", "GitHub"]
 };

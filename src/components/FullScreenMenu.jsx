@@ -107,13 +107,12 @@ const FullScreenMenu = ({ isOpen, onClose }) => {
             >
               <ul>
                 {navigation.map((item) => (
-                  <motion.li key={item.number} variants={linkVariants}>
+                  <motion.li key={item.label} variants={linkVariants}>
                     <a 
                       href={item.href} 
                       onClick={(e) => handleLinkClick(e, item.href)}
                       className="menu-item-link"
                     >
-                      <span className="menu-item-num mono">{item.number}</span>
                       <span className="menu-item-label">{item.label}</span>
                     </a>
                   </motion.li>
