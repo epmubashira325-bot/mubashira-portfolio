@@ -17,9 +17,9 @@ export function SplitText({ text, className }) {
   });
 
   return (
-    <span className={className} style={{ display: "inline-block" }}>
+    <span className={className} style={{ display: "inline" }}>
       {tokens.map((token, index) => (
-        <span key={`${token.word}-${index}`} style={{ display: "inline-block", marginRight: "0.25em" }}>
+        <span key={`${token.word}-${index}`} style={{ display: "inline-block", marginRight: "0.28em", whiteSpace: "nowrap" }}>
           <motion.span
             style={{ display: "inline-block" }}
             initial={{ opacity: 0, y: 10 }}

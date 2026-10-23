@@ -10,7 +10,7 @@ const WIDGETS = [
   { id: 'DEEP LEARNING / COMPUTER VISION', size: 'wide', label: 'CV' },
   { id: 'NLP / GENERATIVE AI', size: 'wide', label: 'NLP' },
   { id: 'WEB DEVELOPMENT', size: 'wide', label: 'Web' },
-  { id: 'EMBEDDED AI', size: 'wide', label: 'Embedded' },
+  { id: 'EMBEDDED AI & AUTOMATION', size: 'wide', label: 'Embedded & Automation' },
   { id: 'DATABASE & TOOLS', size: 'wide', label: 'DB & Tools' },
 ];
 
@@ -18,11 +18,11 @@ const renderWidget = (item) => {
   const categorySkills = skills[item.id] || [];
   
   return (
-    <div style={{ padding: '1.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <h3 className="category-title mono" style={{ marginBottom: '1rem', fontSize: '1rem', color: 'var(--accent)' }}>{item.id}</h3>
-      <div className="skills-list" style={{ flex: 1, display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignContent: 'flex-start' }}>
+    <div className="skill-card-inner">
+      <h3 className="category-title mono">{item.id}</h3>
+      <div className="skills-list">
         {categorySkills.map(skill => (
-          <span key={skill} className="skill-tag" style={{ margin: 0 }}>{skill}</span>
+          <span key={skill} className="skill-tag">{skill}</span>
         ))}
       </div>
     </div>
@@ -31,14 +31,12 @@ const renderWidget = (item) => {
 
 const SkillUniverse = () => {
   return (
-    <section id="skills" className="skills-section" style={{ paddingBottom: '2rem' }}>
-      <h2 className="section-title mono text-center" style={{ marginBottom: '1rem' }}>02 // SKILL CONSTELLATION</h2>
+    <section id="skills" className="skills-section">
+      <h2 className="section-title mono text-center">05 // SKILL CONSTELLATION</h2>
       
-      <p style={{ textAlign: 'center', color: 'var(--muted)', marginBottom: '1.5rem', fontSize: '0.85rem' }}>
-        Drag and rearrange widgets to customize the layout.
-      </p>
+  
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+      <div className="skills-grid-wrapper">
         <DraggableWidgetGrid
           items={WIDGETS}
           renderItem={renderWidget}

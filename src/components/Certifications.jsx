@@ -79,7 +79,7 @@ const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
       <div className="roadmap-header">
-         <h2 className="section-title mono">05 // LEARNING ARCHIVE</h2>
+         <h2 className="section-title mono">06 // LEARNING ARCHIVE</h2>
       </div>
       
       <div className="roadmap-vertical-container">

@@ -24,12 +24,36 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.1em;
   color: var(--text);
   text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 0 12px rgba(94, 156, 249, 0.3);
+  background: #000;
+}
+
+.logo-text {
+  letter-spacing: 0.12em;
 }
 
 .menu-toggle-btn {
