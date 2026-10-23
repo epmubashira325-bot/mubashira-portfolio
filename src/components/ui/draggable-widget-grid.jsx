@@ -478,10 +478,12 @@ export function DraggableWidgetGrid({
         Math.min(maxColumns, Math.round(width / cellSize))
       );
       const unit = (width - gap * (columns - 1)) / columns;
+      // On small screens with 1 column, decouple row height so widgets aren't massive squares
+      const rowUnit = columns === 1 ? Math.min(145, unit * 0.42) : unit;
       setMetrics((was) =>
-        was.columns === columns && Math.abs(was.unit - unit) < 0.5
+        was.columns === columns && Math.abs(was.unit - unit) < 0.5 && Math.abs((was.rowUnit || was.unit) - rowUnit) < 0.5
           ? was
-          : { unit, columns }
+          : { unit, rowUnit, columns }
       );
     };
     measure();
@@ -509,10 +511,11 @@ export function DraggableWidgetGrid({
   const toSlot = useCallback(
     (box) => {
       const el = grid.current;
-      const { unit } = latest.current.metrics;
+      const { unit, rowUnit } = latest.current.metrics;
+      const effectiveRowUnit = rowUnit || unit;
       const rect = el?.getBoundingClientRect();
       const colStep = unit + gap;
-      const rowStep = Math.round(unit) + gap;
+      const rowStep = Math.round(effectiveRowUnit) + gap;
       const left = (rect?.left ?? 0) + box.col * colStep;
       const top = (rect?.top ?? 0) + box.row * rowStep;
       return {
@@ -690,8 +693,8 @@ export function DraggableWidgetGrid({
           style={{
             gap,
             gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-            gridAutoRows: metrics.unit
-              ? `${Math.round(metrics.unit)}px`
+            gridAutoRows: (metrics.rowUnit || metrics.unit)
+              ? `${Math.round(metrics.rowUnit || metrics.unit)}px`
               : `minmax(${cellSize * 0.75}px, auto)`,
           }}>
           {domOrder.current.map((id) => {
