@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import './Contact.css';
 
 const GithubIcon = ({ size = 24 }) => (
@@ -31,20 +31,30 @@ const Contact = () => {
         <p className="contact-subheading">Have a project or opportunity?</p>
 
         <div className="contact-socials">
-          <a href="mailto:epmubashira325@gmail.com" className="social-icon-link" aria-label="Email">
-            <Mail size={28} />
+          <a href="mailto:epmubashira325@gmail.com" className="social-icon-link" aria-label="Email" title="Email">
+            <Mail size={26} />
           </a>
-          <a href="https://www.linkedin.com/in/mubashira-ep/" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn">
-            <LinkedinIcon size={28} />
+          <a href="tel:+919072071443" className="social-icon-link" aria-label="Call" title="Call: +91 90720 71443">
+            <Phone size={24} />
           </a>
-          <a href="https://github.com/epmubashira325-bot" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub">
-            <GithubIcon size={28} />
+          <a href="https://www.linkedin.com/in/mubashira-ep/" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn" title="LinkedIn">
+            <LinkedinIcon size={26} />
+          </a>
+          <a href="https://github.com/epmubashira325-bot" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub" title="GitHub">
+            <GithubIcon size={26} />
           </a>
         </div>
 
-        <div className="contact-location">
-          <MapPin size={18} className="location-icon" />
-          <span className="mono">Mannarkkad, Palakkad, Kerala, India</span>
+        <div className="contact-meta-badges">
+          <a href="tel:+919072071443" className="contact-badge-item" title="Click to call">
+            <Phone size={15} className="location-icon" />
+            <span className="mono">+91 90720 71443</span>
+          </a>
+
+          <div className="contact-badge-item">
+            <MapPin size={15} className="location-icon" />
+            <span className="mono">Mannarkkad, Palakkad, Kerala, India</span>
+          </div>
         </div>
       </motion.div>
     </section>

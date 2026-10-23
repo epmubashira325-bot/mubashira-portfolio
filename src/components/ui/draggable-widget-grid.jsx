@@ -464,7 +464,7 @@ export function DraggableWidgetGrid({
   const [items, setItems] = useState(() => initialItems ?? DEFAULT_ITEMS);
   const grid = useRef(null);
   const hintId = useId();
-  const minColumns = Math.min(2, Math.max(1, maxColumns));
+  const minColumns = 1;
 
   const [metrics, setMetrics] = useState({ unit: 0, columns: 0 });
   useIsoLayoutEffect(() => {

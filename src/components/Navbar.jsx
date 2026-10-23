@@ -29,7 +29,8 @@ const Navbar = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-content">
           <a href="#" className="logo" onClick={handleLogoClick}>
-            PORTFOLIO
+            <img src="/logo.png" alt="Mubashira EP" className="logo-avatar" />
+            <span className="logo-text">PORTFOLIO</span>
           </a>
 
           <button 

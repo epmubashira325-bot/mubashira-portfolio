@@ -48,10 +48,10 @@ const About = () => {
         <div className="about-content-col">
           <motion.div className="about-intro-text" variants={containerVariants}>
             <p>
-              <SplitText text="I’m a **Python AI  & Full Stack Developer** with hands-on experience in **Python, Django, REST APIs, React.js, JavaScript, AI/ML, and Computer Vision**." />
+              I’m a <strong>Python AI &amp; Full Stack Developer</strong> with hands-on experience in <strong>Python, Django, REST APIs, React.js, JavaScript, AI/ML, and Computer Vision</strong>.
             </p>
             <p>
-              <SplitText text="Skilled in building **scalable web applications, backend systems, automation solutions, and AI-powered applications**, with a focus on creating efficient, reliable, and user-focused software solutions." />
+              Skilled in building <strong>scalable web applications, backend systems, automation solutions, and AI-powered applications</strong>, with a focus on creating efficient, reliable, and user-focused software solutions.
             </p>
           </motion.div>
 
